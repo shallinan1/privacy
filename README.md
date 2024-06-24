@@ -42,6 +42,11 @@
     * Question: How private is this? Could we have an attack where we extract data from the hidden states?
 * [Paper link](https://arxiv.org/pdf/1812.00564); [Another link](https://www.media.mit.edu/projects/distributed-learning-and-collaborative-learning-1/overview/#:~:text=Split%20learning%20naturally%20allows%20for,detailed%20information%20about%20the%20model)
 
+#### Shredder: Learning Noise Distributions to Protect Inference Privacy
+* Learns to add noise to data sent to server to protect it
+* *Where* we inject noise can affect how much privacy we ensure; the deeper the cutting point, the more privacy.
+* [Paper link](https://dl.acm.org/doi/pdf/10.1145/3373376.3378522)
+
 ## Other/Main ideas - homomorphic encrpytion is slow/other privacy preserving techniques. Can we somehow accelerate it?
 Three main ideas:
 
@@ -50,9 +55,10 @@ Three main ideas:
 
 ### Using a combination of smaller and larger models (ala speculative sampling) for privacy stuff. Homormophpic speculative sampling? (https://arxiv.org/abs/2302.01318) 
 
-* neural architechture search in 2020, artchiotechtures that work well with HE - why hasn't it been revisited?
-* better distillation and neural architechture search - in small HE model
-* homoromophic articthrues - dstill from existing models
+* Niloofar: Neural architecture search was popular in 2020, looking for architectures that work well with HE - why hasn't it been revisited?
+* Niloofar: Better distillation and neural architechture search - in small HE model
+    * Maybe we can distill from existing models?
+    * Or maybe we can use a mixture of experts - capable, smaller-scale HE to ensure 1) speed and 2) privacy
 
 ### Using encryption only on the parts that need encryption
 
@@ -60,9 +66,7 @@ Three main ideas:
 
 #### Other threads we discussed
 * Niloofar: homormophic encryption for SSM? Could be a low hanging fruit to try
-* Split learning - Niloofar - splits network vertically
-
-
+* Precedent for accelerating encrpytion-based methods: [Cloak](https://dl.acm.org/doi/pdf/10.1145/3442381.3449965) identifies most necessary subset of features needed for prediction
 # Other brainstorm 
 
 ### Membership inference attack - Do Membership Inference Attacks Work on Large Language Models? (https://arxiv.org/pdf/2402.07841)
